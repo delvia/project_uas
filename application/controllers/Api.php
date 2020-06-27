@@ -10,7 +10,7 @@ class Api extends RestController {
     {
     // Construct the parent class
     parent::__construct();
-    $this->load->model('Api_Model', 'model');
+    $this->load->model('Api_model', 'model');
     } 
 
     protected $list_table = ['users'];
