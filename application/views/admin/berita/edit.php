@@ -12,7 +12,7 @@ if(isset($error)) {
 echo validation_errors('<div class="alert alert-warning">','</div>');
 
 //form open
-echo form_open_multipart(base_url('admin/berita/tambah'),' class="form-horizontal"');
+echo form_open_multipart(base_url('admin/berita/edit'),' class="form-horizontal"');
 ?>
 
 <div class="form-group row">

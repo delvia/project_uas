@@ -1,6 +1,6 @@
 <?php
 
-class Produk_model extends CI_Model{
+class Berita_model extends CI_Model{
 
    
    public function __construct()
@@ -13,10 +13,10 @@ class Produk_model extends CI_Model{
    //listing all berita
    public function listing()
    {
-       $this->db->select('');
+       $this->db->select('*');
         $this->db->from('berita');
         //JOIN
-        $this->db->join('users', 'users.id_user = produk.id_user', 'left');
+        $this->db->join('users', 'users.id_user = berita.id_user', 'left');
         
         //end join
         $this->db->group_by('berita.id_berita');
@@ -27,36 +27,8 @@ class Produk_model extends CI_Model{
 
 
 
-   //gambar 
-   public function gambar()
-   {
-    $this->db->select('*');
-    $this->db->from('berita');
    
-     $this->db->order_by('id_berita', 'desc');
-    $query = $this->db->get();
-    return $query->result();
-   }
-
-  
-
-
-    //tambah gambar
-    public function tambah_gambar($data)
-
-    {
-    $this->db->insert('berita', $data);
-    }
-
-    //delete gambar
-
-    public function delete_gambar($data)
-    {
-        $this->db->where('id_berita', $data['id_berita']);
-        $this->db->delete('berita', $data);
-    }
-
-   //detail produk
+   //detail berita
    public function detail($id_berita)
    {
        $this->db->select('*');

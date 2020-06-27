@@ -14,6 +14,7 @@ class Simple_pelanggan
 
     public function login($email,$password)
     {
+        
         $check = $this->CI->pelanggan_model->login($email,$password);
         //jika ada data user maka create session login
         if($check) {

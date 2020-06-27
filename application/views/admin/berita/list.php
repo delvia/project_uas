@@ -12,7 +12,6 @@ if($this->session->flashdata('sukses')) {
     echo '</div>';
     
 }
-
 ?>
 
 <table class="table table-bordered" id="example1"> 
@@ -37,17 +36,17 @@ if($this->session->flashdata('sukses')) {
            
             <td><?php echo $berita->judul_berita ?></td>
             <td><?php echo $berita->slug_berita ?></td>
-           
+            <td><?php echo $berita->keterangan ?></td>
             <td>
 
-                <a href="<?php echo base_url('admin/berita/gambar/'.$berita->id_berita) ?>" 
-                class="btn btn-success btn-xs"><i class="fa fa-image"></i> Gambar(<?php echo 
-                $berita->total_gambar ?>)</a>
-
+              
                 <a href="<?php echo base_url('admin/berita/edit/'.$berita->id_berita) ?>" 
                 class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Edit</a>
-               
-                <?php include ('delete.php') ?> 
+
+               <a href="<?php echo base_url('admin/berita/delete/'.$berita->id_berita) ?>" 
+                class="btn btn-danger btn-xs" onclick="return confirm('yakin ingin menghapus data ini?')">
+                  <i class="fa fa-trash"></i> Hapus</a> 
+                
             </td>
         </tr>
         <?php $no++; } ?>

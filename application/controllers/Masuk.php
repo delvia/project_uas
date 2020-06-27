@@ -14,7 +14,7 @@ class Masuk extends CI_Controller {
     //login pelanggan
     public function index()
     {
-      
+       
         //validasi
         $this->form_validation->set_rules('email','Email/Username','required',
             array( 'required'   => '%s harus diisi'));
@@ -29,13 +29,15 @@ class Masuk extends CI_Controller {
             $password = $this->input->post('password');
             $id_user = $this->session->userdata('id_user');
             //proses ke simple login pelanggan
+            
             $this->simple_pelanggan->login($email,$password);
-           
+            
 
         }
     
             //end validasi
         $data   = array(     'title'        => 'Login Pelanggan',
+                         
                              'isi'          => 'masuk/list'
                         );
         $this->load->view('layout/wrapper', $data, FALSE);

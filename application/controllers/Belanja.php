@@ -93,7 +93,7 @@ class Belanja extends CI_Controller {
                 $i = $this->input;
                 $data = array(      
                                     'id_pelanggan'      => $pelanggan->id_pelanggan,      
- ./                                    'nama_pelanggan'    => $i->post('nama_pelanggan'),
+                                    'nama_pelanggan'    => $i->post('nama_pelanggan'),
                                     'email'             => $i->post('email'),
                                     'telepon'           => $i->post('telepon'),
                                     'alamat'            => $i->post('alamat'),

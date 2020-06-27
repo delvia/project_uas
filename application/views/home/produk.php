@@ -26,6 +26,11 @@ echo form_hidden('redirect_page', str_replace('index.php/','',current_url()));
 
 ?>
 
+
+
+
+
+
 <!-- Block2 -->
 <div class="block2">
 	<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">

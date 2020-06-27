@@ -15,7 +15,11 @@ class Pelanggan_model extends CI_Model{
    {
        $this->db->select('*');
        $this->db->from('pelanggan');
-        $this->db->order_by('id_pelanggan', 'desc');
+       $this->db->join('users', 'users.id_user = pelanggan.id_user', 'left');
+        
+       //end join
+       $this->db->group_by('pelanggan.id_pelanggan');
+       $this->db->order_by('id_pelanggan', 'desc');
        $query = $this->db->get();
        return $query->result();
    }
