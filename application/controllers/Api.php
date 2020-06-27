@@ -48,7 +48,7 @@ class Api extends RestController {
             ], 502);
         }
     }
-    public function Ubahusers_put()
+    public function Ubahusers_post()
     {
         $id = [
             'id_user' => $this->put('id')
@@ -71,7 +71,7 @@ class Api extends RestController {
             ], 502);
         }
     }
-    public function Hapususers_delete()
+    public function Hapususers_post()
     {
         $id = [
             'id_user' => $this->delete('id')
