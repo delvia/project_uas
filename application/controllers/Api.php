@@ -74,7 +74,7 @@ class Api extends RestController {
     public function Hapususers_delete()
     {
         $id = [
-            'id_user' => $this->delete('id_user')
+            'id_user' => $this->delete('id')
         ];
         $hasil = $this->model->hapus('users', $id);
         if ($hasil) {
