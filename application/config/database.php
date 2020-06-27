@@ -75,10 +75,11 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	//'hostname' => 'localhost',
 	//'username' => 'root',
 	//'password' => '',
 	// 'database' => 'del_tokoonline',
+	'hostname' => 'nambangilmu.com',
 	'username' => 'u9413619_delvia',
 	'password' => '9413619_delvia',
 	'database' => 'u9413619_del_tokoonline',
