@@ -58,7 +58,7 @@ class Api extends RestController {
             'akses_level' => $this->put('akses_level')
 
         ];
-        $hasil = $this->model->ubahusers('users', $id, $data);
+        $hasil = $this->model->ubah('users', $id, $data);
         if ($hasil) {
             $this->response([
                 'status' => 'Berhasil',
