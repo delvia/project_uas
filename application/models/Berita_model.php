@@ -25,8 +25,6 @@ class Berita_model extends CI_Model{
        return $query->result();
    }
 
-
-
    
    //detail berita
    public function detail($id_berita)

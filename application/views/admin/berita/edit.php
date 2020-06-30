@@ -12,14 +12,14 @@ if(isset($error)) {
 echo validation_errors('<div class="alert alert-warning">','</div>');
 
 //form open
-echo form_open_multipart(base_url('admin/berita/edit'),' class="form-horizontal"');
+echo form_open_multipart(base_url('admin/berita/edit/'.$berita->id_berita),' class="form-horizontal"');
 ?>
 
 <div class="form-group row">
     <label class="col-md-2 col-form-label">Jenis Berita</label>
     <div class="col-md-5">
         <input type="text" name="jenis_berita" class="form-control" placeholder="Jenis Berita" value=
-        "<?php echo set_value('jenis_berita') ?>" required>
+        "<?php echo $berita->jenis_berita ?>" required>
     </div>
     </div>
 
@@ -27,7 +27,7 @@ echo form_open_multipart(base_url('admin/berita/edit'),' class="form-horizontal"
     <label class="col-md-2 col-form-label">Judul Berita</label>
     <div class="col-md-5">
         <input type="text" name="judul_berita" class="form-control" placeholder="Judul Berita" value=
-        "<?php echo set_value('judul_berita') ?>" required>
+        "<?php echo $berita->judul_berita ?>" required>
     </div>
     </div>
 
@@ -37,7 +37,7 @@ echo form_open_multipart(base_url('admin/berita/edit'),' class="form-horizontal"
     <label class="col-md-2 col-form-label">Slug Berita</label>
     <div class="col-md-5">
         <input type="text" name="slug_berita" class="form-control" placeholder="Slug Berita" value=
-        "<?php echo set_value('slug_berita') ?>" required>
+        "<?php echo $berita->slug_berita ?>" required>
     </div>
     </div>
 
@@ -45,7 +45,7 @@ echo form_open_multipart(base_url('admin/berita/edit'),' class="form-horizontal"
     <label class="col-md-2 col-form-label">Keyword (untuk SEO Google)</label>
     <div class="col-md-10">
         <textarea name="keywords"  class="form-control" placeholder="Keyword (untuk SEO Google)">
-        <?php echo set_value('keywords') ?> </textarea>
+        <?php echo $berita->keywords ?> </textarea>
     </div>
     </div>
 
@@ -55,7 +55,7 @@ echo form_open_multipart(base_url('admin/berita/edit'),' class="form-horizontal"
     <label class="col-md-2 col-form-label">Keterangan</label>
     <div class="col-md-5">
         <input type="text" name="keterangan" class="form-control" placeholder="Keterangan" value=
-        "<?php echo set_value('Keterangan') ?>" required>
+        "<?php echo $berita->keterangan ?>" required>
     </div>
     </div>
 
@@ -64,7 +64,11 @@ echo form_open_multipart(base_url('admin/berita/edit'),' class="form-horizontal"
     <div class="form-group row">
     <label class="col-md-2 col-form-label">Upload Gambar Produk</label>
     <div class="col-md-10">
-    <input type="file" name="gambar" class="form-control"  required="required">
+    <input type="file" name="gambar" class="form-control"  required= "<?php echo $berita->gambar ?>" required >
+   
+       Gambar lama:  <br>
+        <img src="<?php  echo base_url('assets/upload/image/'.$berita->gambar)?>" class="
+       img img-responsive img-thumbnail" width="200">
     </div>
     </div>
 

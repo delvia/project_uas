@@ -12,32 +12,33 @@ class Api_model extends CI_Model {
         $this->load->database();
     }
 
-    public function liat($table)
-    {
-        $this->db->from($table);
-        $data= $this->db->get();
-        return $data->result_array();
-    }
+    //get user
 
-    public function tambah($table, $data)
-    {
-        $this->db->insert($table, $data);
-        return $this->db->affected_rows();
-    }    
-
-    public function ubah($table, $id, $data)
-    {
-        $this->db->where($id)->update($table, $data);
-        return $this->db->affected_rows();
-    }
-
-    public function hapus($table, $id)
-    {
-        $this->db->where($id)->delete($table);
-        return $this->db->affected_rows();
+    public function getuser($id = null) {
+        if($id === null) {
+            return $this->db->get('users')->result_array(); 
+        } else {
+            return $this->db->get_where('users', ['id_user' => $id])->result_array();
+        }
     }
 
 
+    public function deleteuser($id) {
+        $this->db->delete('users', ['id_user' => $id]);
+        return $this->db->affected_rows();
+    }
+
+    public function tambahuser($data) {
+        $this->db->insert('users', $data);
+        return $this->db->affected_rows();
+    }
+
+    public function updateuser($data, $id) {
+        
+        $this->db->update('users', $data, ['id_user' => $id]);
+            
+        return $this->db->affected_rows();
+    }
 
 }
 

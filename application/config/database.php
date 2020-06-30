@@ -75,6 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
+<<<<<<< HEAD
 	// 'hostname' => 'localhost',
 	// 'username' => 'root',
 	// 'password' => '',
@@ -83,6 +84,16 @@ $db['default'] = array(
 	'username' => 'u9413619_delviaokta',
 	'password' => 'u9413619_delviaokta',
 	'database' => 'u9413619_del_tokoonline',
+=======
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	 'database' => 'del_tokoonline',
+	///'hostname' => 'nambangilmu.com',
+	//'username' => 'u9413619_delvia',
+	//'password' => 'u9413619_delvia',
+	//'database' => 'u9413619_del_tokoonline',
+>>>>>>> 901933f... By Delvi
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
