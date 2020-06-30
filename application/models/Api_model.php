@@ -34,8 +34,10 @@ class Api_model extends CI_Model {
     }
 
     public function updateuser($data, $id) {
+        $this->db->where('id_user', $id);
+        $this->db->update('users', $data);
         
-        $this->db->update('users', $data, ['id_user' => $id]);
+        // $this->db->update('users', $data, ['id_user' => $id]);
             
         return $this->db->affected_rows();
     }

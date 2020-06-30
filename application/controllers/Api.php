@@ -14,7 +14,7 @@ class Api extends RestController {
     } 
 
    
-    public function LiatData_get()
+    public function index_get()
     {
         // echo "Ini RestAPI LiatData";
         $id = $this->get('id');
@@ -40,7 +40,7 @@ class Api extends RestController {
             }
     }
 
-    public function Tambahuser_post()
+    public function index_post()
     {
         $data = [
             'id_user' => $this->post('id'),
@@ -61,71 +61,43 @@ class Api extends RestController {
             ],502);
         }
     }
-<<<<<<< HEAD
-    public function Ubahusers_post()
-=======
-    
-    public function Ubahusers_put()
->>>>>>> 901933f... By Delvi
-    {
-        $id =     $this->put('id_user');
-        $data = [
-            
-            
-            'nama' => $this->put('nama'),
-            'username'  => $this->put('username'),
-            'akses_level' => $this->put('akses_level')
-        ];
-<<<<<<< HEAD
-        $hasil = $this->model->ubah('users', $id, $data);
-        if ($hasil) {
-            $this->response([
-                'status' => 'Berhasil',
-                'message' => $data
-            ], 200);
-        } else {
-            $this->response([
-                'status' => false,
-                'message' => "$hasil data diedit"
-            ], 502);
-        }
-    }
-    public function Hapususers_post()
-    {
-        $id = [
-            'id_user' => $this->delete('id')
-        ];
-        $hasil = $this->model->hapus('users', $id);
-        if ($hasil) {
-            $this->response([
-                'status' => 'Berhasil',
-                'message' => $id
-            ], 200);
-        } else {
-            $this->response([
-                'status' => false,
-                'message' => "$hasil data dihapus"
-            ], 502);
-        }
-=======
-            if ($this->model->updateuser($data, $id) > 0) {
-                $this->response([
-                    'status' => true,
-                    'message' => 'update user has been updated',
-                    'data'  => $data,
-                ], 200);
-            } else {
-                $this->response([
-                    'status' => false,
-                    'message' => 'failed to update data'
-                ], 502);
-            }
-        
-        
-    
-    }
 
-    public function Hapususers_delete()
+
+    public function index_put()
+
+    {
+        $id = $this->put('id_user');
+        $nama = $this->put('nama');
+        $username = $this->put('username');
+        $akses_level = $this->put('akses_level');
+
+            $data = array(
+                'id_user' => $id,
+                'nama' => $nama,
+                'username' => $username,
+                'akses_level' => $akses_level
+            );
+
+            if($nama || $username || $akses_level > 0){
+                $update = $this->model->updateuser($data, $id);
+                if($update){
+                    $response = array(
+                        "msg" => "Data telah Terupdate!",
+                        "data" => $data,
+                    );
+                    $this->response($response, 200);
+                }
+                } else {
+                $response = array(
+                    'status' => 'Gagal',
+                    'msg' => 'Data gagal Terupdate!'
+                );
+                $this->response($response, 504);
+            }             
+        }
+
+
+    public function index_delete()
     {
         $id = $this->delete('id_user');
             if($id === null) {
@@ -150,11 +122,10 @@ class Api extends RestController {
                 
                 }
             }
+        }
         
->>>>>>> 901933f... By Delvi
-    }  
-
-
+        
 }
+
 
 /* End of file Api.php */
