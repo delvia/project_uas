@@ -102,6 +102,31 @@
           </li>
           
 
+<!-- MENU USER -->
+<li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="fa fa-lock"></i>
+              <p>
+              PELANGGAN
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?php echo base_url('admin/pelanggan') ?>" class="nav-link">
+                  <i class="fa fa-table"></i>
+                  <p>Data pelanggan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?php echo base_url('admin/pelanggan/tambah') ?>" class="nav-link">
+                  <i class="fa fa-plus"></i>
+                  <p>Tambah pelanggan</p>
+                </a>
+              </li>
+              </ul>
+          </li>
+
 
 
           <!-- MENU KONFIGURASI -->

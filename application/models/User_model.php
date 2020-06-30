@@ -58,15 +58,14 @@ class User_model extends CI_Model{
         $this->db->delete('users', $data);
     }
 
-    //edit
+    //editt
     public function edit($data)
     {
         $this->db->where('id_user', $data['id_user']);
         $this->db->update('users', $data);
     }
 
-
-
+    
 
 
 

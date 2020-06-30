@@ -8,7 +8,9 @@ Produk Terbaru
 </div>
 
 <!-- Slide2 -->
+
 <div class="wrap-slick2">
+
 <div class="slick2">
 <?php foreach($produk as $produk) { ?>
 <div class="item-slick2 p-l-15 p-r-15">
@@ -61,7 +63,9 @@ echo form_hidden('redirect_page', str_replace('index.php/','',current_url()));
 		IDR <?php echo number_format ($produk->harga,'0',',','.') ?>
 		</span>
 	</div>
+	
 </div>
+
 <?php
 //closing form
 echo 
@@ -72,7 +76,9 @@ form_close();
 
 <?php } ?>
 </div>
+
 </div>
 
 </div>
+
 </section>

@@ -62,7 +62,7 @@ class Konfigurasi extends CI_Controller{
         }
  
 
-        
+        //
     }
 
     //konfigurasi logo website
