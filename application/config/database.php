@@ -78,12 +78,19 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => '',
+<<<<<<< HEAD
 	'database' => 'del_tokoonline',
+=======
+	 'database' => 'del_tokoonline',
+>>>>>>> 901933fa50462d21c175ed61eac9ff8089d747f9
 	///'hostname' => 'nambangilmu.com',
 	//'username' => 'u9413619_delvia',
 	//'password' => 'u9413619_delvia',
 	//'database' => 'u9413619_del_tokoonline',
+<<<<<<< HEAD
 
+=======
+>>>>>>> 901933fa50462d21c175ed61eac9ff8089d747f9
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

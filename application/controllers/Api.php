@@ -14,7 +14,11 @@ class Api extends RestController {
     } 
 
    
+<<<<<<< HEAD
     public function index_get()
+=======
+    public function LiatData_get()
+>>>>>>> 901933fa50462d21c175ed61eac9ff8089d747f9
     {
         // echo "Ini RestAPI LiatData";
         $id = $this->get('id');
@@ -61,6 +65,7 @@ class Api extends RestController {
             ],502);
         }
     }
+<<<<<<< HEAD
 
 
     public function index_put()
@@ -98,6 +103,37 @@ class Api extends RestController {
 
 
     public function index_delete()
+=======
+    
+    public function Ubahusers_put()
+    {
+        $id =     $this->put('id_user');
+        $data = [
+            
+            
+            'nama' => $this->put('nama'),
+            'username'  => $this->put('username'),
+            'akses_level' => $this->put('akses_level')
+        ];
+            if ($this->model->updateuser($data, $id) > 0) {
+                $this->response([
+                    'status' => true,
+                    'message' => 'update user has been updated',
+                    'data'  => $data,
+                ], 200);
+            } else {
+                $this->response([
+                    'status' => false,
+                    'message' => 'failed to update data'
+                ], 502);
+            }
+        
+        
+    
+    }
+
+    public function Hapususers_delete()
+>>>>>>> 901933fa50462d21c175ed61eac9ff8089d747f9
     {
         $id = $this->delete('id_user');
             if($id === null) {
@@ -122,9 +158,16 @@ class Api extends RestController {
                 
                 }
             }
+<<<<<<< HEAD
         }
         
         
+=======
+        
+    }  
+
+
+>>>>>>> 901933fa50462d21c175ed61eac9ff8089d747f9
 }
 
 
