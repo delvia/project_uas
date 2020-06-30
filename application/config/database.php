@@ -75,22 +75,14 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-<<<<<<< HEAD
-	'database' => 'del_tokoonline',
-=======
-	 'database' => 'del_tokoonline',
->>>>>>> 901933fa50462d21c175ed61eac9ff8089d747f9
-	///'hostname' => 'nambangilmu.com',
-	//'username' => 'u9413619_delvia',
-	//'password' => 'u9413619_delvia',
-	//'database' => 'u9413619_del_tokoonline',
-<<<<<<< HEAD
-
-=======
->>>>>>> 901933fa50462d21c175ed61eac9ff8089d747f9
+	//'hostname' => 'localhost',
+	//'username' => 'root',
+	//'password' => '',
+	//'database' => 'del_tokoonline',
+	'hostname' => 'nambangilmu.com',
+	'username' => 'u9413619_delvia',
+	'password' => 'u9413619_delvia',
+	'database' => 'u9413619_del_tokoonline',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
